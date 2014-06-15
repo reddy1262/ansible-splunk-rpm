@@ -4,3 +4,5 @@ Download the latest .deb files from splunk and drop them in the files directory 
 
 Updated the command for splunk license section
  splunk start --answer-yes --no-prompt --accept-license
+
+TODO: check if splunkforwarder already installed and running, so this will be an upgrade.
