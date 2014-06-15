@@ -6,7 +6,7 @@
   command: dpkg -i /tmp/{{ splunk_filename }} creates=/opt/splunkforwarder
 
 - name: splunk license
-  command: /opt/splunkforwarder/bin/splunk start --accept-license creates=/opt/splunkforwarder/etc/users/splunk-system-user
+  command: /opt/splunkforwarder/bin/splunk start --answer-yes --no-prompt --accept-license creates=/opt/splunkforwarder/etc/users/splunk-system-user
 
 - name: setup to start at boot
   command: /opt/splunkforwarder/bin/splunk enable boot-start
