@@ -1,4 +1,11 @@
 ---
+- name: add splunk indexing tier to local hosts file
+  lineinfile: /etc/hosts
+    regexp="^"
+    insertafter="^"
+    line="0.0.0.0 splunk"
+    state=present
+
 - name: copy over the splunk installation deb
   copy: src={{ splunk_filename }} dest=/tmp
 
