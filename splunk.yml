@@ -1,4 +1,4 @@
-- hosts: monitoring
+- hosts: splunk
   sudo: True
   roles:
     - splunk
