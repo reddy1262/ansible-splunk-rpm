@@ -15,10 +15,10 @@
 - name: splunk license
   command: /opt/splunkforwarder/bin/splunk start --answer-yes --no-prompt --accept-license creates=/opt/splunkforwarder/etc/users/splunk-system-user
   
-  -name: log into splunk
+- name: log into splunk
   command: /opt/splunk/bin/splunk login -auth admin:changeme
   
-  -name: change splunk password
+- name: change splunk password
   command: /opt/splunk/bin/splunk edit user admin password (NEW PASSWORD GOES HERE)
 
 - name: setup to start at boot
@@ -26,3 +26,6 @@
 
 - name: connect to splunk server
   command: /opt/splunkforwarder/bin/splunk add forward-server splunk:9997 -auth admin:bRe6w!_utRUVeC7h
+  
+- name: restart splunk forwarder
+  command: /opt/splunkforwarder/bin/splunk restart
