@@ -12,7 +12,7 @@
   command: /opt/splunk/bin/splunk login -auth admin:changeme
   
   -name: change splunk password
-  command /opt/splunk/bin/splunk edit user admin password (NEW PASSWORD GOES HERE)
+  command: /opt/splunk/bin/splunk edit user admin password (NEW PASSWORD GOES HERE)
 
 - name: setup to start at boot
   command: /opt/splunk/bin/splunk enable boot-start
