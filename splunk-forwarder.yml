@@ -1,4 +1,4 @@
-- hosts: gwyn02
+- hosts: splunkfw
   sudo: True
   roles:
     - splunk-forwarder
