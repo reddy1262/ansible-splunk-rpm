@@ -19,7 +19,7 @@
   command: /opt/splunk/bin/splunk login -auth admin:changeme
   
   -name: change splunk password
-  command /opt/splunk/bin/splunk edit user admin password bRe6w!_utRUVeC7h
+  command /opt/splunk/bin/splunk edit user admin password (NEW PASSWORD GOES HERE)
 
 - name: setup to start at boot
   command: /opt/splunkforwarder/bin/splunk enable boot-start
