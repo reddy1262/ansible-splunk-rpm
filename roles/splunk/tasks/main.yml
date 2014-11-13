@@ -8,17 +8,17 @@
 - name: splunk license
   command: /opt/splunk/bin/splunk start --answer-yes --no-prompt --accept-license creates=/opt/splunk/etc/users/splunk-system-user
   
-  -name: log into splunk
+-name: log into splunk
   command: /opt/splunk/bin/splunk login -auth admin:changeme
   
-  -name: change splunk password
+-name: change splunk password
   command: /opt/splunk/bin/splunk edit user admin password (NEW PASSWORD GOES HERE)
 
 - name: setup to start at boot
   command: /opt/splunk/bin/splunk enable boot-start
   
-  -name: restart splunk
+-name: restart splunk
   command: /opt/splunk/bin/splunk restart
   
-  -name: renice splunk instance
+-name: renice splunk instance
   command: renice 10 `head -1 /opt/splunk/var/run/splunk/splunkd.pid`
