@@ -10,3 +10,6 @@
 
 - name: setup to start at boot
   command: /opt/splunk/bin/splunk enable boot-start
+  
+  -name: renice splunk instance
+  command: renice 10 `head -1 /opt/splunk/var/run/splunk/splunkd.pid`
