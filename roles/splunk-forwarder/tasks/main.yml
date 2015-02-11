@@ -6,11 +6,11 @@
     line="0.0.0.0 splunk"
     state=present
 
-- name: copy over the splunk installation deb
+- name: copy over the splunk installation rpm
   copy: src={{ splunk_filename }} dest=/tmp
 
-- name: install splunk with dpkg
-  command: dpkg -i /tmp/{{ splunk_filename }} creates=/opt/splunkforwarder
+- name: install splunk with rpm
+  command: rpm -i /tmp/{{ splunk_filename }} creates=/opt/splunkforwarder
 
 - name: splunk license
   command: /opt/splunkforwarder/bin/splunk start --answer-yes --no-prompt --accept-license creates=/opt/splunkforwarder/etc/users/splunk-system-user
