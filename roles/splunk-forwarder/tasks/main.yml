@@ -25,7 +25,7 @@
   command: /opt/splunkforwarder/bin/splunk enable boot-start
 
 - name: connect to splunk server
-  command: /opt/splunkforwarder/bin/splunk add forward-server splunk:9997 -auth admin:bRe6w!_utRUVeC7h
+  command: /opt/splunkforwarder/bin/splunk add forward-server splunk:9997 -auth admin:changeme
   
 - name: restart splunk forwarder
   command: /opt/splunkforwarder/bin/splunk restart
