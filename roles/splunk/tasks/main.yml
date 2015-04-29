@@ -1,9 +1,9 @@
 ---
-- name: copy over the splunk installation deb
+- name: copy over the splunk installation rpm
   copy: src={{ splunk_filename }} dest=/tmp
 
-- name: install splunk with dpkg
-  command: dpkg -i /tmp/{{ splunk_filename }} creates=/opt/splunk
+- name: install splunk with rpm
+  command: rpm -i /tmp/{{ splunk_filename }} creates=/opt/splunk
 
 - name: splunk license
   command: /opt/splunk/bin/splunk start --answer-yes --no-prompt --accept-license creates=/opt/splunk/etc/users/splunk-system-user
