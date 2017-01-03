@@ -21,4 +21,4 @@
   command: /opt/splunk/bin/splunk restart
   
 - name: renice splunk instance
-  command: renice 10 `head -1 /opt/splunk/var/run/splunk/splunkd.pid`
+  command: renice -10 `head -1 /opt/splunk/var/run/splunk/splunkd.pid`
