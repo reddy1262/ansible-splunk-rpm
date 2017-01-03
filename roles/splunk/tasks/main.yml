@@ -17,6 +17,12 @@
 - name: setup to start at boot
   command: /opt/splunk/bin/splunk enable boot-start
   
+- name: Turn off THP
+  lineinfile: dest=/sys/kernel/mm/transparent_hugepages/{{item}} regexp=* line="never"
+  with_items:
+  - enabled
+  - defrag
+
 - name: restart splunk
   command: /opt/splunk/bin/splunk restart
   
